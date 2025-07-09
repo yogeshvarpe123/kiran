@@ -261,7 +261,7 @@ split_list_2 = re.split(r"(:|;)", text_with_delimiters)
 print(f"  Split with capturing delimiters: {split_list_2}")
 
 # maxsplit argument
-split_list_3 = re.split(r"\s", "a b c d e", maxsplit=2)
+split_list_3 = re.split(r"\s", "a b c d e", maxsplit=3)
 print(f"  Split with maxsplit=2: {split_list_3}")
 print("-" * 30)
 
@@ -472,7 +472,7 @@ except re.error as e:
 
 try:
     # Invalid escape sequence (e.g., \q is not a known sequence)
-    re.search("\\q", "test")
+    re.search(r"q", "test")
 except re.error as e:
     print(f"  Caught regex error for '\\q': {e}")
 print("-" * 30)
